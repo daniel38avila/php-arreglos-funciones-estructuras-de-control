@@ -27,3 +27,10 @@ var_dump($lista_de_frutas);
 
 echo "\n";
 
+//¿Mini-reto? Convierte "A,B, C ,D" en ["A","B","C","D"] (sin espacios) y luego únelos como "A | B | C | D".
+
+$cadena = "A,B,C,D";
+$array = explode(",", $cadena);
+$array = array_map('trim', $array); // Elimina espacios en blanco
+$cadena_unida = implode(" | ", $array);
+echo $cadena_unida . "\n"; // Imprime: A | B | C | D
