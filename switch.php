@@ -1,45 +1,49 @@
 <?php 
 
-//lista de frutas y precios
+// Lista de frutas y sus precios (versión en comentarios)
+// Pera = 10
+// Manzana = 20
+// Naranja = 30
+// Sandia = 40
+// Platano = 50
 
-//Pera = 10
-//Manzana = 20
-//Naranja = 30
-//Sandia = 40
-//Platano = 50
-
+// Variable que guarda el nombre de la fruta a consultar
 $canasta = "pera";
 
-// Forma de hacer un switch para mostrar el precio de las frutas
 
+// PRIMERA FORMA: Switch básico
 
 switch ($canasta) {
-    case "pera":
-        echo "La pera cuesta $10";
-        break;
+    case "pera": // Si $canasta es "pera"
+        echo "La pera cuesta $10"; // Muestra el precio fijo
+        break; // Sale del switch
+
     case "manzana":
-        echo "La manzana cuesta  $20";
+        echo "La manzana cuesta $20";
         break;
+
     case "naranja":
         echo "La naranja cuesta $30";
         break;
+
     case "sandia":
-        echo "La sandia cuesta  $40";
+        echo "La sandía cuesta $40";
         break;
+
     case "platano":
-        echo "El platano cuesta  $50";
+        echo "El plátano cuesta $50";
         break;
-    default:
-        echo "De eso no hay aqui";
+
+    default: // Si $canasta no coincide con ninguno de los anteriores
+        echo "De eso no hay aquí";
 }
-echo PHP_EOL;
-//Fin del switch
+echo PHP_EOL; // Salto de línea en consola
 
 
-//forma de optimizar el switch
-//Usando un array asociativo para los precios
 
-// Array asociativo con los precios de las frutas
+// SEGUNDA FORMA: Switch optimizado
+
+// Creamos un array asociativo con frutas como claves y precios como valores
 $precios = [
     "pera" => 10,
     "manzana" => 20,
@@ -48,16 +52,19 @@ $precios = [
     "platano" => 50
 ];
 
+// Evaluamos $canasta pero agrupando casos
 switch ($canasta) {
+    // Si $canasta es cualquiera de estas frutas
     case "pera":
     case "manzana":
     case "naranja":
     case "sandia":
     case "platano":
+        // Accedemos al precio desde el array y lo mostramos
         echo "La $canasta cuesta $" . $precios[$canasta];
         break;
+
     default:
         echo "De eso no hay aquí";
 }
-echo PHP_EOL;
-
+echo PHP_EOL; // Salto de línea
