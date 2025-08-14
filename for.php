@@ -24,3 +24,29 @@ for ($a = 0, $b = 0; $a < 10; $a++, $b += 2) {
 
 // Imprime un salto de línea final
 echo PHP_EOL;
+
+
+
+// Usando un ciclo for para iterar sobre un arreglo
+
+// Array con los productos del almacén
+// Cada producto es un array asociativo con nombre, categoría y precio
+$productos = [
+    ["nombre" => "Camisa",    "categoria" => "Ropa",     "precio" => 25000],
+    ["nombre" => "Pantalón",  "categoria" => "Ropa",     "precio" => 40000],
+    ["nombre" => "Zapatos",   "categoria" => "Calzado",  "precio" => 80000]
+];
+
+// Ciclo for para recorrer todos los productos
+for ($i = 0; $i < count($productos); $i++) {
+    // Accedemos a cada elemento por su índice
+    $producto = $productos[$i];
+
+    // Mostramos la información formateada
+    echo "Producto: " . $producto["nombre"] . "\n";
+    echo "Categoría: " . $producto["categoria"] . "\n";
+    echo "Precio: $" . number_format($producto["precio"], 0, ',', '.') . "\n";
+    echo "----------------------\n";
+}
+
+echo PHP_EOL;
