@@ -1,3 +1,9 @@
+<?php 
+
+// Ejemplo básico de uso de while en PHP
+
+// Queremos imprimir "Hello, World!" 10 veces usando un ciclo while
+
 $contador = 1; // Paso 1: inicializas el contador
 
 while ($contador <= 10) { // Paso 2: revisas la condición
